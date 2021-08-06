@@ -1,0 +1,37 @@
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="currentEntry" class="edit-form">
+      <h4>Entry</h4>
+      <form>
+        <div class="form-group">
+            <label for="name">Date</label>
+            <input type="date" class="form-control" id="date" required [(ngModel)]="currentEntry.date" name="date" [max]="getToday()"/>
+          </div>
+  
+          <div class="form-group">
+              <label for="name">Project Name</label>
+              <select id="name" name="name" [(ngModel)]="currentEntry.name" required class="form-control">
+                <option value="Project A">Project A</option>
+                <option value="Project B">Project B</option>
+                <option value="Project C">Project C</option>
+                <option value="Project D">Project D</option>
+              </select>
+            </div>
+  
+          <div class="form-group">
+              <label for="hours">Hours</label>
+              <input type="number" class="form-control" id="hours" required [(ngModel)]="currentEntry.hours" name="hours" min="0" max="8" />
+          </div>
+  
+          <div class="form-group">
+              <label for="remarks"></label>
+              <input type="text" class="form-control" id="remarks" required [(ngModel)]="currentEntry.remarks" name="remarks" />
+            </div>
+  
+      </form>
+  
+      <button type="button" class="btn btn-warning" (click)="updateEntry()" >Update</button>
+      <button type="button" class="btn btn-danger" (click)="deleteEntry()">Delete</button>
+
+    </div>
+  
+  </div>

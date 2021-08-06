@@ -1,0 +1,38 @@
+<div style="width: 500px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!isEntryAdded">
+        <div class="form-group">
+          <label for="name">Date</label>
+          <input type="date" class="form-control" id="date" required [(ngModel)]="entry.date" name="date" [max]="getToday()"/>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Project Name</label>
+            <select id="name" name="name" [(ngModel)]="entry.name" required class="form-control">
+              <option value="Project A">Project A</option>
+              <option value="Project B">Project B</option>
+              <option value="Project C">Project C</option>
+              <option value="Project D">Project D</option>
+            </select>
+          </div>
+
+        <div class="form-group">
+            <label for="hours">Hours</label>
+            <input type="number" class="form-control" id="hours" required [(ngModel)]="entry.hours" name="hours" min="0" max="8" />
+        </div>
+
+        <div class="form-group">
+            <label for="remarks"></label>
+            <input type="text" class="form-control" id="remarks" required [(ngModel)]="entry.remarks" name="remarks" />
+          </div>
+  
+        <button (click)="addEntry()" class="btn btn-success">Create</button>
+      </div>
+  
+      <div *ngIf="isEntryAdded">
+        <h3>New entry added!</h3>
+        <button class="btn btn-success" (click)="newEntry()"> + Add More</button>
+      </div>
+    </div>
+  </div>
+    
