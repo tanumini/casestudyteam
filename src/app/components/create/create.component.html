@@ -1,38 +1,81 @@
 <div style="width: 500px; margin: auto;">
-    <div class="submit-form">
-      <div *ngIf="!isEntryAdded">
-        <div class="form-group">
-          <label for="name">Date</label>
-          <input type="date" class="form-control" id="date" required [(ngModel)]="entry.date" name="date" [max]="getToday()"/>
+  <div class="submit-form">
+    <div *ngIf="!isEntryAdded">
+      <form #applicationform="ngForm" (ngSubmit)=addEntry(applicationform.value)>
+
+
+        <div >
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control"  [(ngModel)]="entry.firstname" required pattern="^[A-Za-z]+$"
+            id="firstname"  name="firstname" />
         </div>
-
-        <div class="form-group">
-            <label for="name">Project Name</label>
-            <select id="name" name="name" [(ngModel)]="entry.name" required class="form-control">
-              <option value="Project A">Project A</option>
-              <option value="Project B">Project B</option>
-              <option value="Project C">Project C</option>
-              <option value="Project D">Project D</option>
-            </select>
-          </div>
-
-        <div class="form-group">
-            <label for="hours">Hours</label>
-            <input type="number" class="form-control" id="hours" required [(ngModel)]="entry.hours" name="hours" min="0" max="8" />
+        <div >
+          <label for="lastname">Last Name</label>
+          <input type="text" class="form-control"  [(ngModel)]="entry.lastname" id="lastname" required pattern="^[A-Za-z]+$"
+             name="lastname" />
         </div>
-
+        <div >
+          <label for="email">Email ID</label>
+          <input type="email" class="form-control"   [(ngModel)]="entry.email" id="email" required 
+            name="email" />
+        </div>
+        <div >
+          <label for="contact">Contact No</label>
+          <input type="number" class="form-control"  [(ngModel)]="entry.contact" id="contact" required pattern="^[789][0-9]{9}$"
+             name="contact" />
+        </div>
+        <div >
+          <label for="address">Address</label>
+          <input type="text" class="form-control"  [(ngModel)]="entry.address" id="address"  required pattern="^[A-Z a-z]{50}$"
+             name="address" />
+        </div>
+        <div >
+          <label for="occupation">Occupation</label>
+          <input type="text" class="form-control"  [(ngModel)]="entry.occupation" required pattern="^[A-Z a-z]+$"
+            id="occupation"  name="occuption" />
+        </div>
+        <div >
+          <label for="employername">Employer Name</label>
+          <input type="text" class="form-control"  [(ngModel)]="entry.employername" required pattern="^[A-Z a-z]+$"
+            id="employername"  name="employername" />
+        </div>
+        <div>
+          <label for="maritalstatus">Marital Status</label>
+          <select id="maritalstatus" name="maritalstatus" 
+            [(ngModel)]="entry.maritalstatus" required  class="form-control">
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div >
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender"  [(ngModel)]="entry.gender" required 
+            class="form-control">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div >
+          <label for="pancardno">Pan Card</label>
+          <input type="text" class="form-control" ngModel [(ngModel)]="entry.pancardno" required pattern="^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$"
+            id="pancardno"  name="pancardno" />
+        </div>
         <div class="form-group">
-            <label for="remarks"></label>
-            <input type="text" class="form-control" id="remarks" required [(ngModel)]="entry.remarks" name="remarks" />
-          </div>
-  
-        <button (click)="addEntry()" class="btn btn-success">Create</button>
-      </div>
-  
-      <div *ngIf="isEntryAdded">
-        <h3>New entry added!</h3>
-        <button class="btn btn-success" (click)="newEntry()"> + Add More</button>
-      </div>
+          <label for="aadhaarno">Aadhaar Card</label>
+          <input type="number" class="form-control" ngModel [(ngModel)]="entry.aadhaarno" required pattern="^[0-9]{12}$"
+            id="aadhaarno" name="aadhaarno" />
+        </div>
+        <button  class="btn btn-success"  [disabled]=applicationform.invalid>Submit</button>
+
+      </form>
+    </div>
+    <div *ngIf="isEntryAdded">
+      <h3>Application submitted successfully
+      </h3>
     </div>
   </div>
-    
+</div>
+
+

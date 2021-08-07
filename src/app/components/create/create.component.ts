@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EntryService } from 'src/app/sevices/entry.service';
 
 @Component({
@@ -11,36 +12,69 @@ import { EntryService } from 'src/app/sevices/entry.service';
 
 export class CreateComponent implements OnInit {
 
-  // maxDate = new Date();
+
 
   entry = {
-    date: new Date(),
-    name: '',
-    hours: 0,
-    remarks: ''
+    firstname:"",
+lastname:"",
+email:"",
+contact:0,
+address:"",
+occupation:"",
+employername:"",
+maritalstatus:"",
+gender:"",
+pancardno:"",
+aadhaarno:0,
+status:""
+ 
   };
   isEntryAdded = false;
 
   constructor(private entryService: EntryService) { }
 
   ngOnInit(): void { }
+ /* applicationform = new FormGroup({
+    firstname:new FormControl('',[Validators.required,Validators.pattern("^[A-Za-z]+$")]),
+    lastname:new FormControl('',[Validators.required,Validators.pattern("^[A-Za-z]+$")]),
+    email:new FormControl('',[Validators.required,Validators.email]),
+    contact:new FormControl('',[Validators.required,Validators.pattern("^[789][0-9]{9}$")]),
+    address:new FormControl('',[Validators.required,Validators.pattern("^[A-Z a-z]{50}$")]),
+    occupation:new FormControl('',[Validators.required,Validators.pattern("^[A-Z a-z]+$")]),
+    employername:new FormControl('',[Validators.required,Validators.pattern("^[A-Z a-z]+$")]),
+    maritalstatus:new FormControl('',[Validators.required]),
+    gender:new FormControl('',[Validators.required]),
+    pancardno: new FormControl('',[Validators.required, Validators.pattern("^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$")]),
+    aadhaarno:new FormControl('',[Validators.required,Validators.pattern("^[0-9]{12}$")])
+
+  });*/
 
   getToday(): string {
     return new Date().toISOString().split('T')[0]
  }
 
   // Add New
-  addEntry(): void {
-    const data = {
-      date: this.entry.date,
-      name: this.entry.name,
-      hours: this.entry.hours,
-      remarks: this.entry.remarks
-    };
-    if (!data.name) {
-      alert('Please enter Project Name!');
-      return;
-    }
+  addEntry(data:any): void {
+  
+   /* const data = {
+      firstname:this.entry.firstname,
+      lastname:this.entry.lastname,
+      email:this.entry.email,
+      contact:this.entry.contact,
+      address:this.entry.address,
+      occupation:this.entry.occupation,
+      employername:this.entry.employername,
+      maritalstatus:this.entry.maritalstatus,
+      gender:this.entry.gender,
+      pancardno:this.entry.pancardno,
+      aadhaarno:this.entry.aadhaarno,
+      status:this.entry.status,
+    };*/
+    console.log(data);
+  //  if (!data.firstname) {
+    //  alert('Enter correct info');
+      //return;
+ //   }
 
     this.entryService.create(data)
       .subscribe(
@@ -57,10 +91,18 @@ export class CreateComponent implements OnInit {
   newEntry(): void {
     this.isEntryAdded = false;
     this.entry = {
-      date: new Date(),
-      name: '',
-      hours: 0,
-      remarks: ''
+      firstname:"",
+      lastname:"",
+      email:"",
+      contact:0,
+      address:"",
+      occupation:"",
+      employername:"",
+      maritalstatus:"",
+      gender:"",
+      pancardno:"",
+      aadhaarno:0,
+      status:""
     };
   }
 
