@@ -10,76 +10,24 @@
       "occupation": "real estate",
       "employername": "own",
       "maritalstatus": "single",
-      "gender": "fenmale",
+      "gender": "female",
       "pancardno": "ABCDE1234A",
-      "aadhaarno": 345178340119,
+      "aadhaarno": 245178340119,
       "status": "rejected"
     },
     {
-      "firstname": "priyanka",
-      "lastname": "holla",
-      "email": "priyanka@gmail.com",
-      "contact": "9858909781",
-      "address": "12 cross bangalore",
-      "occupation": "fishing",
-      "employername": "own",
-      "maritalstatus": "single",
+      "firstname": "fhshskjg",
+      "lastname": "tkjhnjkh",
+      "email": "tjhej@gmail.com",
+      "contact": 9890909898,
+      "address": "abc card",
+      "occuption": "doctor",
+      "employername": "freeman",
+      "maritalstatus": "married",
       "gender": "female",
-      "pancardno": "PTVOD1234T",
-      "aadhaarno": 0,
-      "status": "",
+      "pancardno": "ITHTH3456U",
+      "aadhaarno": 234509897997,
       "id": 2
-    },
-    {
-      "firstname": "rahima tanaz",
-      "lastname": "shaik",
-      "email": "abc@gmail.com",
-      "contact": "8567878901",
-      "address": "Sri sai durga ladies pg,lane opposite to medplus,BHEL layout,RR Nagar,Bengaluru,Karnataka 560098",
-      "occupation": "tailor",
-      "employername": "own",
-      "maritalstatus": "single",
-      "gender": "female",
-      "pancardno": "ITHTH3456U",
-      "aadhaarno": 0,
-      "status": "",
-      "id": 3
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "contact": 0,
-      "address": "",
-      "occupation": "",
-      "employername": "",
-      "maritalstatus": "",
-      "gender": "",
-      "pancardno": "",
-      "aadhaarno": 0,
-      "status": "",
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "firstname": "rahima tanaz",
-      "lastname": "MEHNAZ",
-      "email": "billkish.shaik@gmail.com",
-      "contact": 9878909871,
-      "address": "Sri sai durga ladies pg,lane opposite to medplus,BHEL layout,RR Nagar,Bengaluru,Karnataka 560098",
-      "occupation": "tailor",
-      "employername": "own",
-      "maritalstatus": "single",
-      "gender": "male",
-      "pancardno": "ITHTH3456U",
-      "aadhaarno": 276543567889,
-      "status": "",
-      "id": 7
     }
   ]
 }
